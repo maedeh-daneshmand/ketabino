@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { BookOpen, Instagram, Send } from "lucide-react";
+import { NewsletterForm } from "@/components/newsletter-form";
+
+export function SiteFooter() {
+  return <footer className="site-footer"><div className="container footer-grid"><div className="footer-about"><Link href="/" className="brand footer-brand"><span className="brand-symbol"><BookOpen size={21} /></span><span>کتابینو<small>KETABINO</small></span></Link><p>برای هر روزت، یک داستان تازه. کتابینو فضایی برای کشف کتاب‌های دوست‌داشتنی و ساختن عادت شیرین مطالعه است.</p><div className="social-links"><a href="https://instagram.com" aria-label="اینستاگرام"><Instagram size={18} /></a><a href="https://t.me" aria-label="تلگرام"><Send size={18} /></a></div></div><div><h3>دسترسی سریع</h3><Link href="/explore">فروشگاه کتاب</Link><Link href="/categories/fiction">داستان و رمان</Link><Link href="/membership">اشتراک کتابینو</Link><Link href="/library">کتابخانه من</Link></div><div><h3>راهنمای کتابینو</h3><Link href="/about">درباره ما</Link><Link href="/favorites">علاقه‌مندی‌ها</Link><Link href="/cart">سبد خرید</Link><Link href="/search">جست‌وجوی کتاب</Link></div><div className="footer-news"><h3>خبرهای خوب کتابی</h3><p>برای باخبر شدن از تازه‌های کتابینو همراه ما باش.</p><NewsletterForm /></div></div><div className="container footer-bottom"><span>© ۱۴۰۵ کتابینو · همه حقوق محفوظ است.</span><span>ساخته‌شده برای عاشقان کتاب <span className="footer-heart">♥</span></span></div></footer>;
+}
