@@ -110,3 +110,9 @@ html[data-theme="dark"] .button-outline{background:#2c4937;border-color:#496c51;
 html[data-theme="dark"] .button-ghost{background:#49352f;border-color:#725044;color:#f0d5cb}
 @media(max-width:760px){.reader-summary{grid-template-columns:1fr;gap:8px;padding:17px}.reader-summary h2{font-size:17px}}
 
+/* A distinct sample-reading action beside the cart button on book cards. */
+.quick-preview{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:30px;padding:0 9px;border:1px solid #e7d8bd;border-radius:7px;background:#f5eddf;color:#94713e;font-size:9px;font-weight:700;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.quick-preview:hover{background:#ead9b8;border-color:#d7bd8e;color:#705329}
+html[data-theme="dark"] .quick-preview{background:#403a2b;border-color:#65583b;color:#e4c98e}
+html[data-theme="dark"] .quick-preview:hover{background:#51462f;border-color:#806b43;color:#f5dfae}
+
