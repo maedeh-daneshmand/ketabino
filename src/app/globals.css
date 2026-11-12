@@ -39,8 +39,10 @@
 @keyframes ketabino-float-a{0%,100%{translate:0 0}50%{translate:0 -11px}}
 @keyframes ketabino-float-b{0%,100%{translate:0 0}50%{translate:0 -8px}}
 @keyframes ketabino-float-c{0%,100%{translate:0 0}50%{translate:0 -13px}}
+@keyframes ketabino-book-drift{0%,100%{translate:0 0;rotate:0deg}25%{translate:0 -7px;rotate:1.2deg}50%{translate:0 -3px;rotate:0deg}75%{translate:0 -9px;rotate:-1.2deg}}
 .hero-copy{animation:ketabino-rise .75s both}.hero-art{animation:ketabino-rise .85s .12s both}
-.hero-book-one{animation:ketabino-float-a 5.2s ease-in-out infinite}.hero-book-two{animation:ketabino-float-b 4.7s .35s ease-in-out infinite}.hero-book-three{animation:ketabino-float-c 5.6s .7s ease-in-out infinite}
+.hero-book-one,.hero-book-two,.hero-book-three{animation:ketabino-book-drift 4.8s ease-in-out infinite}
+.hero-book-two{animation-delay:.35s}.hero-book-three{animation-delay:.7s}
 .hero-art:hover .hero-book-one,.hero-art:hover .hero-book-two,.hero-art:hover .hero-book-three{animation-play-state:paused}
 .promise-row>div,.category-tile,.book-card,.editorial-banner,.reader-note-inner{animation:ketabino-rise .65s both}
 .category-tile:nth-child(2),.book-card:nth-child(2){animation-delay:.06s}.category-tile:nth-child(3),.book-card:nth-child(3){animation-delay:.12s}.category-tile:nth-child(4),.book-card:nth-child(4){animation-delay:.18s}.category-tile:nth-child(5),.book-card:nth-child(5){animation-delay:.24s}.category-tile:nth-child(6){animation-delay:.3s}
@@ -115,4 +117,32 @@ html[data-theme="dark"] .button-ghost{background:#49352f;border-color:#725044;co
 .quick-preview:hover{background:#ead9b8;border-color:#d7bd8e;color:#705329}
 html[data-theme="dark"] .quick-preview{background:#403a2b;border-color:#65583b;color:#e4c98e}
 html[data-theme="dark"] .quick-preview:hover{background:#51462f;border-color:#806b43;color:#f5dfae}
+
+/* Three distinct book motions, plus one shared gentle breathing effect. */
+@keyframes hero-book-left-motion{
+  0%,100%{translate:0 0;rotate:0deg}
+  25%{translate:-9px -13px;rotate:-3deg}
+  55%{translate:5px -4px;rotate:2deg}
+  80%{translate:-4px -10px;rotate:-1deg}
+}
+@keyframes hero-book-center-motion{
+  0%,100%{translate:0 0;rotate:0deg}
+  30%{translate:8px -8px;rotate:3deg}
+  65%{translate:-5px -15px;rotate:-2deg}
+}
+@keyframes hero-book-right-motion{
+  0%,100%{translate:0 0;rotate:0deg}
+  20%{translate:4px -16px;rotate:2deg}
+  50%{translate:-8px -7px;rotate:-3deg}
+  78%{translate:5px -12px;rotate:1deg}
+}
+@keyframes hero-books-breathe{
+  0%,100%{scale:1;filter:drop-shadow(8px 14px 13px rgba(43,67,52,.17))}
+  50%{scale:1.035;filter:drop-shadow(10px 19px 16px rgba(43,67,52,.22))}
+}
+.hero-book-one{animation:hero-book-left-motion 5.1s ease-in-out infinite,hero-books-breathe 3.8s ease-in-out infinite}
+.hero-book-two{animation:hero-book-center-motion 4.4s .25s ease-in-out infinite,hero-books-breathe 4.2s .4s ease-in-out infinite}
+.hero-book-three{animation:hero-book-right-motion 5.6s .5s ease-in-out infinite,hero-books-breathe 3.6s .8s ease-in-out infinite}
+.hero-art:hover .hero-book-one,.hero-art:hover .hero-book-two,.hero-art:hover .hero-book-three{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.hero-book-one,.hero-book-two,.hero-book-three{animation:none}}
 
